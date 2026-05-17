@@ -10,8 +10,8 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 
   <!-- Favicons -->
-  <link href="/build/assets/img/favicon.png" rel="icon">
-  <link href="/build/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/build/assets/img/logo.png" rel="icon">
+  <link href="/build/assets/img/logo.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -48,7 +48,14 @@
           <li><a href="/#gallery">Galeri</a></li>
           <!-- <li><a href="/#team">Pengurus</a></li> -->
           <li><a href="/#contact">Kontak</a></li>
-          <li><a href="serasi" class="active">Serasi</a></li>
+          <li class="dropdown"><a href="#" class="active"><span>Service</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="serasi" class="active">Serasi</a></li>
+              <li><a href="https://app.himaif.web.id/" target="_blank">Penilaian Keaktifan Anggota</a></li>
+              <li><a href="https://sertifikat-generator-hima-informati.vercel.app/" target="_blank">Sertifikat Generator</a></li>
+            </ul>
+          </li>
+          <li><a href="/login" style="background: rgba(255,255,255,0.15); border-radius: 50px; padding: 8px 20px; margin-left: 15px; border: 1px solid rgba(255,255,255,0.3); transition: 0.3s;"><i class="bi bi-person-circle me-1"></i> Admin</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -195,16 +202,11 @@
             <span class="sitename">HIMA Informatika</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>Gedung Student Center Lt.2</p>
-            <p>Kampus Universitas Example, Jl. Informatika No.123</p>
-            <p class="mt-3"><strong>Telepon:</strong> <span>+62 812 3456 7890</span></p>
-            <p><strong>Email:</strong> <span>hima.informatika@example.ac.id</span></p>
+            <p>Gedung ICT C - Universitas Teknokrat Indonesia</p>
+            <p><strong>Email:</strong> <span>hima_informatika@teknokrat.ac.id</span></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/hima_informatika_uti/" target="_blank"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
 
@@ -247,7 +249,7 @@
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">HIMA Informatika</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Developed by <a href="https://portfolio-hafisyulianto.vercel.app/">Hafis Yulianto</a>
       </div>
     </div>
 

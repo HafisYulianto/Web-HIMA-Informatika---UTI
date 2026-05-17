@@ -10,8 +10,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
   <!-- Favicons -->
-  <link href="/build/assets/img/favicon.png" rel="icon">
-  <link href="/build/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/build/assets/img/logo.png" rel="icon">
+  <link href="/build/assets/img/logo.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -48,8 +48,14 @@
           <li><a href="#gallery">Galeri</a></li>
           <!-- <li><a href="#team">Pengurus</a></li> -->
           <li><a href="#contact">Kontak</a></li>
-              <li><a href="serasi">Serasi</a></li> <!-- Tambahkan ini -->
-
+          <li class="dropdown"><a href="#"><span>Service</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="serasi">Serasi</a></li>
+              <li><a href="https://app.himaif.web.id/" target="_blank">Penilaian Keaktifan Anggota</a></li>
+              <li><a href="https://sertifikat-generator-hima-informati.vercel.app/" target="_blank">Sertifikat Generator</a></li>
+            </ul>
+          </li>
+          <li><a href="/login" style="background: rgba(255,255,255,0.15); border-radius: 50px; padding: 8px 20px; margin-left: 15px; border: 1px solid rgba(255,255,255,0.3); transition: 0.3s;"><i class="bi bi-person-circle me-1"></i> Admin</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -74,7 +80,7 @@
             <p>Wadah pengembangan diri dan profesionalisme bagi mahasiswa informatika</p>
             <div class="d-flex">
               <a href="#about" class="btn-get-started">Jelajahi</a>
-              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Tonton Video</span></a>
+
             </div>
           </div>
 
@@ -223,50 +229,7 @@
 
     </section><!-- /Activities Section -->
 
-    <!-- Stats Section -->
-    <section id="stats" class="stats section light-background">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-emoji-smile"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="250" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Anggota Aktif</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-journal-richtext"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Kegiatan</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-award"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Prestasi</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-people"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Pengurus</p>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Stats Section -->
 
     <!-- Details Section -->
     <section id="details" class="details section">
@@ -504,59 +467,38 @@ Memeberikan fasilitas dukungan kompetitif.
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h3>Alamat</h3>
-                <p>Gedung Student Center Lt.2, Kampus Universitas Example, Jl. Informatika No.123</p>
+                <p>Gedung ICT C - Universitas Teknokrat Indonesia</p>
               </div>
             </div><!-- End Info Item -->
 
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
+              <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
-                <h3>Telepon</h3>
-                <p>+62 812 3456 7890</p>
+                <h3>Email</h3>
+                <p>hima_informatika@teknokrat.ac.id</p>
               </div>
             </div><!-- End Info Item -->
 
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
+              <i class="bi bi-instagram flex-shrink-0"></i>
               <div>
-                <h3>Email</h3>
-                <p>hima.informatika@example.ac.id</p>
+                <h3>Instagram</h3>
+                <p><a href="https://www.instagram.com/hima_informatika_uti/" target="_blank">@hima_informatika_uti</a></p>
               </div>
             </div><!-- End Info Item -->
 
           </div>
 
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Nama Lengkap" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subjek" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Pesan" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Pesan Anda telah terkirim. Terima kasih!</div>
-
-                  <button type="submit">Kirim Pesan</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
+          <div class="col-lg-8 d-flex align-items-center justify-content-center">
+            <div class="text-center w-100 p-5 bg-white shadow-sm rounded-4 border border-light">
+              <i class="bi bi-envelope-paper text-danger mb-3" style="font-size: 3rem;"></i>
+              <h3 class="fw-bold mb-3">Punya Pertanyaan atau Keluhan?</h3>
+              <p class="text-muted mb-4">Silakan hubungi kami secara langsung melalui email HIMA Informatika. Kami akan dengan senang hati merespons pesan Anda.</p>
+              <a href="mailto:hima_informatika@teknokrat.ac.id" class="btn btn-danger btn-lg px-5 py-3 rounded-pill fw-bold shadow-sm" style="background: linear-gradient(135deg, #dc3545, #fd7e14); border: none;">
+                <i class="bi bi-envelope-at me-2"></i> Kirim Email Sekarang
+              </a>
+            </div>
+          </div><!-- End Contact Info Box -->
 
         </div>
 
@@ -578,16 +520,11 @@ Memeberikan fasilitas dukungan kompetitif.
             <span class="sitename">HIMA Informatika</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>Gedung Student Center Lt.2</p>
-            <p>Kampus Universitas Example, Jl. Informatika No.123</p>
-            <p class="mt-3"><strong>Telepon:</strong> <span>+62 812 3456 7890</span></p>
-            <p><strong>Email:</strong> <span>hima.informatika@example.ac.id</span></p>
+            <p>Gedung ICT C - Universitas Teknokrat Indonesia</p>
+            <p><strong>Email:</strong> <span>hima_informatika@teknokrat.ac.id</span></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.instagram.com/hima_informatika_uti/" target="_blank"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
 
@@ -630,7 +567,7 @@ Memeberikan fasilitas dukungan kompetitif.
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">HIMA Informatika</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Developed by <a href="https://portfolio-hafisyulianto.vercel.app/">Hafis Yulianto</a>
       </div>
     </div>
 
