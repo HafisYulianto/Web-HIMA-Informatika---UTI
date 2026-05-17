@@ -105,8 +105,8 @@ Akses aplikasi melalui browser di: `http://localhost:8000`
 ## 🔐 Hak Akses (Credentials)
 
 Untuk masuk ke dalam panel admin, gunakan kredensial berikut (pastikan Anda sudah menjalankan `php artisan migrate --seed`):
-- **Email:** `hima_informatika@teknokrat.ac.id`
-- **Password:** `8februari2001` *(Sesuai konfigurasi di seeder)*
+- **Email:** `[EMAIL_ADDRESS]`
+- **Password:** `password` *(Sesuai konfigurasi di seeder)*
 
 ---
 
