@@ -196,51 +196,52 @@
   <footer id="footer" class="footer dark-background">
 
     <div class="container footer-top">
-      <div class="row gy-4">
+      <div class="row gy-4 justify-content-between">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">HIMA Informatika</span>
+          <a href="/" class="logo d-flex align-items-center mb-3">
+            <span class="sitename" style="font-size: 1.8rem; font-weight: 700; background: linear-gradient(135deg, #fff, #f8a1a1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">HIMA Informatika</span>
           </a>
+          <p class="text-white-50 mb-4">Wadah pengembangan diri dan profesionalisme bagi mahasiswa informatika Universitas Teknokrat Indonesia.</p>
           <div class="footer-contact pt-3">
-            <p>Gedung ICT C - Universitas Teknokrat Indonesia</p>
-            <p><strong>Email:</strong> <span>hima_informatika@teknokrat.ac.id</span></p>
+            <p><strong>Gedung ICT C</strong></p>
+            <p>Universitas Teknokrat Indonesia</p>
+            <p class="mt-3"><strong>Email:</strong> <span>hima_informatika@teknokrat.ac.id</span></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href="https://www.instagram.com/hima_informatika_uti/" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.instagram.com/hima_informatika_uti/" target="_blank" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border: none;"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Tautan Berguna</h4>
+          <h4>Tautan</h4>
           <ul>
-            <li><a href="/#hero">Beranda</a></li>
-            <li><a href="/#about">Tentang Kami</a></li>
-            <li><a href="/#activities">Kegiatan</a></li>
-            <li><a href="/#gallery">Galeri</a></li>
-            <li><a href="/#contact">Kontak</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/#hero">Beranda</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/#about">Tentang</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/#activities">Kegiatan</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/#gallery">Galeri</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/#contact">Kontak</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Program Kami</h4>
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Service</h4>
           <ul>
-            <li><a href="#">Coding Bootcamp</a></li>
-            <li><a href="#">Tech Talk</a></li>
-            <li><a href="#">Kompetisi</a></li>
-            <li><a href="#">Workshop</a></li>
-            <li><a href="#">Study Group</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="serasi">Serasi</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://app.himaif.web.id/" target="_blank">Penilaian Keaktifan</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://sertifikat-generator-hima-informati.vercel.app/" target="_blank">Sertifikat Generator</a></li>
           </ul>
         </div>
 
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Newsletter Kami</h4>
-          <p>Berlangganan newsletter kami untuk mendapatkan informasi terbaru tentang kegiatan dan event HIMA Informatika!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email" placeholder="Email Anda"><input type="submit" value="Berlangganan"></div>
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Permintaan berlangganan Anda telah terkirim. Terima kasih!</div>
-          </form>
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4>Divisi Kami</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Bina Prestasi</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Sumber Daya Manusia</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Hubungan Masyarakat</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Sosial Masyarakat</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Komunikasi Digital</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Ekonomi Kreatif</a></li>
+          </ul>
         </div>
 
       </div>
