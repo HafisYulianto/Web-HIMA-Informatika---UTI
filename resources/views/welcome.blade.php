@@ -72,7 +72,7 @@
       <div class="container">
         <div class="row gy-4 justify-content-between">
           <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
-            <img src="/build/assets/img/hero-img.png" class="img-fluid animated" alt="">
+            <img src="/build/assets/img/hero-renascens2.png" class="img-fluid animated" alt="Hero HIMA IF">
           </div>
 
           <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
@@ -247,53 +247,25 @@
             <img src="/build/assets/img/details-1.png" class="img-fluid" alt="">
           </div>
           <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-            <h3>Informatics Excellence Center 
+            <h3>Informatics Excellence Center (IEC) 2.0
 </h3>
             <p class="fst-italic">
-              : Ruang Inovasi dan Prestasi Mahasiswa Informatika
+              Deskripsi: - Sebuah wadah bagi mahasiswa Informatika untuk mengembangkan         
+              minat di bidang teknologi tertentu, melakukan riset terapan, serta  
+              mempersiapkan diri agar siap bersaing di kompetisi dan dunia industri.
             </p>
             <ul>
-              <li><i class="bi bi-check"></i><span> Deskripsi: Program ini bertujuan untuk menciptakan ruang inovasi yang mendukung mahasiswa Informatika untuk berprestasi. 
-</span></li>
-              <li><i class="bi bi-check"></i> <span>Kegiatan Utama:
-Pengembangan ruang inovasi dan Menciptakan ruang kompetitif
-Memeberikan fasilitas dukungan kompetitif. 
-</span></li>
-              <li><i class="bi bi-check"></i> <span>Manfaat: Meningkatkan kreativitas, kemampuan kompetitif, dan keterampilan teknis.</span></li>
+              <li><i class="bi bi-check"></i><span> 
+                  Kegiatan Utama: Pembentukan kelompok studi yang berfokus pada riset yang 
+                  mengacu pada kompetisi di bidang teknologi.</span></li>
+              <li><i class="bi bi-check"></i> <span>Manfaat: 
+                  Mencetak mahasiswa yang unggul secara teknis maupun non-teknis, 
+                  meningkatkan jumlah prestasi, dan membangun portofolio yang kuat   
+                  untuk terjun ke dunia industri.
+              </span></li>
             </ul>
           </div>
         </div><!-- Features Item -->
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="/build/assets/img/details-2.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
-            <h3>Tech Week</h3>
-            <p class="fst-italic">
-              Serangkaian acara teknologi selama seminggu yang mencakup workshop dan seminar.
-            </p>
-            <p>
-              Tech Week merupakan program unggulan yang dirancang untuk memberikan exposure terhadap teknologi terkini dan tren industri. Peserta akan mendapatkan insight langsung dari praktisi industri dan kesempatan untuk mengembangkan project nyata.
-            </p>
-          </div>
-        </div><!-- Features Item -->
-
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
-            <img src="/build/assets/img/details-3.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-7" data-aos="fade-up">
-            <h3>Informatics Goes to School</h3>
-            <p>Program pengabdian masyarakat dengan mengajarkan dasar-dasar pemrograman dan teknologi informasi kepada siswa sekolah.</p>
-            <ul>
-              <li><i class="bi bi-check"></i> <span>Memperkenalkan coding sejak dini</span></li>
-              <li><i class="bi bi-check"></i><span> Membangun minat terhadap teknologi informasi</span></li>
-              <li><i class="bi bi-check"></i> <span>Memberikan kontribusi nyata untuk pendidikan</span></li>
-            </ul>
-          </div>
-        </div><!-- Features Item -->
-
       </div>
 
     </section><!-- /Details Section -->
