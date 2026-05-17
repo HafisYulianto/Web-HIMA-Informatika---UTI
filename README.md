@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/build/assets/img/hero-pradipta.png" alt="Logo HIMA Informatika" width="200" />
+  <img src="public/build/assets/img/logo.png" alt="Logo HIMA Informatika" width="200" />
   
   # Web Portal HIMA Informatika UTI 🚀
   
