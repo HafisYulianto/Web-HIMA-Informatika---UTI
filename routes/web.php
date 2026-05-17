@@ -5,6 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SerasiController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\DivisiController;
+use App\Http\Controllers\Admin\KabinetController;
+use App\Http\Controllers\Admin\ProgramController;
+use App\Models\Divisi;
+use App\Models\Kabinet;
+use App\Models\Program;
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth'])
@@ -23,10 +29,16 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::put('/serasi/{id}', [SerasiController::class, 'update'])->name('serasi.update');
     Route::delete('/serasi/{id}', [SerasiController::class, 'destroy'])->name('serasi.destroy');
     Route::resource('users', UserController::class);
+    Route::resource('divisi', DivisiController::class);
+    Route::resource('kabinet', KabinetController::class);
+    Route::resource('program', ProgramController::class);
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    $divisis = Divisi::all();
+    $kabinet = Kabinet::latest()->first();
+    $programs = Program::all();
+    return view('welcome', compact('divisis', 'kabinet', 'programs'));
 });
 
 Route::get('/dashboard', function () {

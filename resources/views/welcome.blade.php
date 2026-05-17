@@ -72,7 +72,11 @@
       <div class="container">
         <div class="row gy-4 justify-content-between">
           <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
-            <img src="/build/assets/img/hero-renascens2.png" class="img-fluid animated" alt="Hero HIMA IF">
+            @if(isset($kabinet) && $kabinet->logo)
+              <img src="{{ asset('storage/' . $kabinet->logo) }}" class="img-fluid animated" alt="{{ $kabinet->nama }}">
+            @else
+              <img src="/build/assets/img/hero-renascens2.png" class="img-fluid animated" alt="Hero HIMA IF">
+            @endif
           </div>
 
           <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
@@ -242,30 +246,35 @@
 
       <div class="container">
 
-        <div class="row gy-4 align-items-center features-item">
-          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <img src="/build/assets/img/details-1.png" class="img-fluid" alt="">
+        @forelse($programs as $program)
+        <div class="row gy-4 align-items-center features-item mt-4">
+          <div class="col-md-5 d-flex align-items-center {{ $loop->iteration % 2 == 0 ? 'order-md-last' : '' }}" data-aos="zoom-out" data-aos-delay="100">
+            @if($program->gambar)
+            <img src="{{ asset('storage/' . $program->gambar) }}" class="img-fluid" alt="{{ $program->judul }}">
+            @else
+            <img src="/build/assets/img/details-1.png" class="img-fluid" alt="{{ $program->judul }}">
+            @endif
           </div>
           <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-            <h3>Informatics Excellence Center (IEC) 2.0
-</h3>
+            <h3>{{ $program->judul }}</h3>
             <p class="fst-italic">
-              Deskripsi: - Sebuah wadah bagi mahasiswa Informatika untuk mengembangkan         
-              minat di bidang teknologi tertentu, melakukan riset terapan, serta  
-              mempersiapkan diri agar siap bersaing di kompetisi dan dunia industri.
+              {{ $program->deskripsi }}
             </p>
             <ul>
-              <li><i class="bi bi-check"></i><span> 
-                  Kegiatan Utama: Pembentukan kelompok studi yang berfokus pada riset yang 
-                  mengacu pada kompetisi di bidang teknologi.</span></li>
-              <li><i class="bi bi-check"></i> <span>Manfaat: 
-                  Mencetak mahasiswa yang unggul secara teknis maupun non-teknis, 
-                  meningkatkan jumlah prestasi, dan membangun portofolio yang kuat   
-                  untuk terjun ke dunia industri.
-              </span></li>
+              @if($program->kegiatan_utama)
+              <li><i class="bi bi-check"></i><span> <strong>Kegiatan Utama:</strong> {{ $program->kegiatan_utama }}</span></li>
+              @endif
+              @if($program->manfaat)
+              <li><i class="bi bi-check"></i> <span><strong>Manfaat:</strong> {{ $program->manfaat }}</span></li>
+              @endif
             </ul>
           </div>
         </div><!-- Features Item -->
+        @empty
+        <div class="text-center text-muted">
+          <p>Belum ada program kerja yang ditambahkan.</p>
+        </div>
+        @endforelse
       </div>
 
     </section><!-- /Details Section -->
@@ -283,47 +292,20 @@
 
         <div class="row g-4 justify-content-center">
 
-          <!-- Divisi 1 -->
+          @forelse($divisis as $divisi)
           <div class="col-lg-4 col-md-6">
             <div class="text-center p-5 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-center align-items-center divisi-card" style="background: linear-gradient(145deg, #ffffff, #f8f9fa); border: 1px solid #f0f0f0; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(220, 53, 69, 0.15)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)';">
-              <h3 class="fw-bold mb-0 text-uppercase" style="background: linear-gradient(135deg, #dc3545, #fd7e14); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.4rem; letter-spacing: 1.5px;">Bina Prestasi</h3>
+              @if($divisi->logo)
+              <img src="{{ asset('storage/' . $divisi->logo) }}" alt="Logo {{ $divisi->nama }}" class="img-fluid mb-3" style="width: 80px; height: 80px; object-fit: contain;">
+              @endif
+              <h3 class="fw-bold mb-0 text-uppercase" style="background: linear-gradient(135deg, #dc3545, #fd7e14); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.4rem; letter-spacing: 1.5px;">{{ $divisi->nama }}</h3>
             </div>
           </div>
-
-          <!-- Divisi 2 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="text-center p-5 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-center align-items-center divisi-card" style="background: linear-gradient(145deg, #ffffff, #f8f9fa); border: 1px solid #f0f0f0; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(220, 53, 69, 0.15)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)';">
-              <h3 class="fw-bold mb-0 text-uppercase" style="background: linear-gradient(135deg, #dc3545, #fd7e14); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.4rem; letter-spacing: 1.5px;">Sumber Daya Manusia</h3>
-            </div>
+          @empty
+          <div class="col-12 text-center text-muted">
+            <p>Belum ada data divisi yang ditambahkan.</p>
           </div>
-
-          <!-- Divisi 3 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="text-center p-5 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-center align-items-center divisi-card" style="background: linear-gradient(145deg, #ffffff, #f8f9fa); border: 1px solid #f0f0f0; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(220, 53, 69, 0.15)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)';">
-              <h3 class="fw-bold mb-0 text-uppercase" style="background: linear-gradient(135deg, #dc3545, #fd7e14); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.4rem; letter-spacing: 1.5px;">Hubungan Masyarakat</h3>
-            </div>
-          </div>
-
-          <!-- Divisi 4 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="text-center p-5 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-center align-items-center divisi-card" style="background: linear-gradient(145deg, #ffffff, #f8f9fa); border: 1px solid #f0f0f0; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(220, 53, 69, 0.15)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)';">
-              <h3 class="fw-bold mb-0 text-uppercase" style="background: linear-gradient(135deg, #dc3545, #fd7e14); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.4rem; letter-spacing: 1.5px;">Sosial Masyarakat</h3>
-            </div>
-          </div>
-
-          <!-- Divisi 5 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="text-center p-5 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-center align-items-center divisi-card" style="background: linear-gradient(145deg, #ffffff, #f8f9fa); border: 1px solid #f0f0f0; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(220, 53, 69, 0.15)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)';">
-              <h3 class="fw-bold mb-0 text-uppercase" style="background: linear-gradient(135deg, #dc3545, #fd7e14); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.4rem; letter-spacing: 1.5px;">Komunikasi Digital</h3>
-            </div>
-          </div>
-
-          <!-- Divisi 6 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="text-center p-5 rounded-4 shadow-sm h-100 d-flex flex-column justify-content-center align-items-center divisi-card" style="background: linear-gradient(145deg, #ffffff, #f8f9fa); border: 1px solid #f0f0f0; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(220, 53, 69, 0.15)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)';">
-              <h3 class="fw-bold mb-0 text-uppercase" style="background: linear-gradient(135deg, #dc3545, #fd7e14); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 1.4rem; letter-spacing: 1.5px;">Ekonomi Kreatif</h3>
-            </div>
-          </div>
+          @endforelse
 
         </div>
         </div>

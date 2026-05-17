@@ -43,6 +43,33 @@
             Manajemen User
         </a>
 
+        <a href="{{ route('admin.divisi.index') }}"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 mt-1
+            {{ request()->routeIs('admin.divisi.*') 
+                ? 'bg-gradient-to-r from-red-600/20 to-orange-500/10 text-red-400 border border-red-500/20 shadow-sm' 
+                : 'text-slate-400 hover:text-white hover:bg-slate-800' }}">
+            <i class="bi bi-diagram-3-fill text-base"></i>
+            Manajemen Divisi
+        </a>
+
+        <a href="{{ route('admin.kabinet.index') }}"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 mt-1
+            {{ request()->routeIs('admin.kabinet.*') 
+                ? 'bg-gradient-to-r from-red-600/20 to-orange-500/10 text-red-400 border border-red-500/20 shadow-sm' 
+                : 'text-slate-400 hover:text-white hover:bg-slate-800' }}">
+            <i class="bi bi-star-fill text-base"></i>
+            Manajemen Kabinet
+        </a>
+
+        <a href="{{ route('admin.program.index') }}"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 mt-1
+            {{ request()->routeIs('admin.program.*') 
+                ? 'bg-gradient-to-r from-red-600/20 to-orange-500/10 text-red-400 border border-red-500/20 shadow-sm' 
+                : 'text-slate-400 hover:text-white hover:bg-slate-800' }}">
+            <i class="bi bi-rocket-takeoff-fill text-base"></i>
+            Manajemen Program
+        </a>
+
         <div class="my-6 border-t border-slate-800"></div>
         <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3 px-3">Akun</p>
 
