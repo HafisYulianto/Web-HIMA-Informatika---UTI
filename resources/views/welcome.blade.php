@@ -501,12 +501,11 @@
         <div class="col-lg-3 col-md-3 footer-links">
           <h4>Divisi Kami</h4>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Bina Prestasi</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Sumber Daya Manusia</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Hubungan Masyarakat</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Sosial Masyarakat</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Komunikasi Digital</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Ekonomi Kreatif</a></li>
+            @forelse($divisis as $divisi)
+            <li><i class="bi bi-chevron-right"></i> <a href="#gallery">{{ $divisi->nama }}</a></li>
+            @empty
+            <li><i class="bi bi-chevron-right"></i> <span class="text-white-50">Belum ada divisi</span></li>
+            @endforelse
           </ul>
         </div>
 
