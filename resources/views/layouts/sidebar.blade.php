@@ -76,7 +76,7 @@
                 ? 'bg-gradient-to-r from-red-600/20 to-orange-500/10 text-red-400 border border-red-500/20 shadow-sm' 
                 : 'text-slate-400 hover:text-white hover:bg-slate-800' }}">
             <i class="bi bi-folder-fill text-base"></i>
-            Our Project
+            Manajemen Proyek
         </a>
 
         <div class="my-6 border-t border-slate-800"></div>
