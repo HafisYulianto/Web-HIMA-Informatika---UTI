@@ -45,7 +45,7 @@
           <li><a href="/#hero">Beranda</a></li>
           <li><a href="/#about">Tentang</a></li>
           <li><a href="/#activities">Kegiatan</a></li>
-          <li><a href="/#gallery">Galeri</a></li>
+          <li><a href="/#divisi">Divisi</a></li>
           <!-- <li><a href="/#team">Pengurus</a></li> -->
           <li><a href="/#contact">Kontak</a></li>
           <li class="dropdown"><a href="#" class="active"><span>Service</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -218,7 +218,7 @@
             <li><i class="bi bi-chevron-right"></i> <a href="/#hero">Beranda</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="/#about">Tentang</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="/#activities">Kegiatan</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="/#gallery">Galeri</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/#divisi">Divisi</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="/#contact">Kontak</a></li>
           </ul>
         </div>
