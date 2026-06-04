@@ -37,7 +37,7 @@ class OurProjectController extends Controller
 
         OurProject::create($data);
 
-        return redirect()->route('admin.our-project.index')->with('success', 'Project berhasil ditambahkan.');
+        return redirect()->route('admin.our-project.index')->with('success', 'Proyek berhasil ditambahkan.');
     }
 
     public function show(string $id)
@@ -72,7 +72,7 @@ class OurProjectController extends Controller
 
         $project->update($data);
 
-        return redirect()->route('admin.our-project.index')->with('success', 'Project berhasil diperbarui.');
+        return redirect()->route('admin.our-project.index')->with('success', 'Proyek berhasil diperbarui.');
     }
 
     public function destroy(string $id)
@@ -83,6 +83,6 @@ class OurProjectController extends Controller
         }
         $project->delete();
 
-        return redirect()->route('admin.our-project.index')->with('success', 'Project berhasil dihapus.');
+        return redirect()->route('admin.our-project.index')->with('success', 'Proyek berhasil dihapus.');
     }
 }
