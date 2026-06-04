@@ -6,12 +6,12 @@
     {{-- Header --}}
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-            <h1 class="text-2xl font-bold text-white">Manage Our Project</h1>
-            <p class="text-sm text-slate-400 mt-1">Kelola data project yang akan ditampilkan di website</p>
+            <h1 class="text-2xl font-bold text-white">Manajemen Proyek</h1>
+            <p class="text-sm text-slate-400 mt-1">Kelola data proyek yang akan ditampilkan di website</p>
         </div>
         <a href="{{ route('admin.our-project.create') }}" 
             class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-red-600 to-orange-500 text-white text-sm font-semibold rounded-xl hover:from-red-700 hover:to-orange-600 transition-all duration-300 shadow-lg shadow-red-500/20">
-            <i class="bi bi-plus-lg"></i> Tambah Project
+            <i class="bi bi-plus-lg"></i> Tambah Proyek
         </a>
     </div>
 
@@ -27,8 +27,8 @@
     @if($projects->isEmpty())
     <div class="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center">
         <i class="bi bi-folder2-open text-5xl text-slate-600 mb-3 block"></i>
-        <p class="text-slate-500 text-lg">Belum ada data project</p>
-        <p class="text-slate-600 text-sm mt-1">Klik tombol "Tambah Project" untuk memulai</p>
+        <p class="text-slate-500 text-lg">Belum ada data proyek</p>
+        <p class="text-slate-600 text-sm mt-1">Klik tombol "Tambah Proyek" untuk memulai</p>
     </div>
     @else
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -53,7 +53,7 @@
                     </a>
                     <form method="POST" action="{{ route('admin.our-project.destroy', $project->id) }}" class="inline">
                         @csrf @method('DELETE')
-                        <button onclick="return confirm('Yakin ingin menghapus project ini?')" 
+                        <button onclick="return confirm('Yakin ingin menghapus proyek ini?')" 
                             class="p-2.5 rounded-xl bg-red-500/90 text-white hover:bg-red-600 transition-all shadow-lg" title="Hapus">
                             <i class="bi bi-trash3"></i>
                         </button>
@@ -67,7 +67,7 @@
                 @if($project->link)
                 <a href="{{ $project->link }}" target="_blank" 
                     class="inline-flex items-center gap-1.5 text-xs font-medium text-red-400 hover:text-red-300 transition-colors">
-                    <i class="bi bi-box-arrow-up-right"></i> Lihat Project
+                    <i class="bi bi-box-arrow-up-right"></i> Lihat Proyek
                 </a>
                 @endif
                 <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
@@ -79,7 +79,7 @@
                         </a>
                         <form method="POST" action="{{ route('admin.our-project.destroy', $project->id) }}" class="inline">
                             @csrf @method('DELETE')
-                            <button onclick="return confirm('Yakin ingin menghapus project ini?')" 
+                            <button onclick="return confirm('Yakin ingin menghapus proyek ini?')" 
                                 class="p-1.5 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-all text-xs" title="Hapus">
                                 <i class="bi bi-trash3"></i>
                             </button>
