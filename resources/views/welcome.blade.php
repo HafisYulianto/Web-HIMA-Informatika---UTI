@@ -45,7 +45,7 @@
           <li><a href="#hero" class="active">Beranda</a></li>
           <li><a href="#about">Tentang</a></li>
           <li><a href="#activities">Kegiatan</a></li>
-          <li><a href="#gallery">Galeri</a></li>
+          <li><a href="#divisi">Divisi</a></li>
           <li><a href="#our-project">Our Project</a></li>
           <!-- <li><a href="#team">Pengurus</a></li> -->
           <li><a href="#contact">Kontak</a></li>
@@ -281,7 +281,7 @@
     </section><!-- /Details Section -->
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery section">
+    <section id="divisi" class="gallery section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -552,7 +552,7 @@
             <li><i class="bi bi-chevron-right"></i> <a href="#hero">Beranda</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="#about">Tentang</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="#activities">Kegiatan</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#gallery">Galeri</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#divisi">Divisi</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="#contact">Kontak</a></li>
           </ul>
         </div>
@@ -570,7 +570,7 @@
           <h4>Divisi Kami</h4>
           <ul>
             @forelse($divisis as $divisi)
-            <li><i class="bi bi-chevron-right"></i> <a href="#gallery">{{ $divisi->nama }}</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#divisi">{{ $divisi->nama }}</a></li>
             @empty
             <li><i class="bi bi-chevron-right"></i> <span class="text-white-50">Belum ada divisi</span></li>
             @endforelse
