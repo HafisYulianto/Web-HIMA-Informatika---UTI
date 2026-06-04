@@ -46,6 +46,7 @@
           <li><a href="#about">Tentang</a></li>
           <li><a href="#activities">Kegiatan</a></li>
           <li><a href="#gallery">Galeri</a></li>
+          <li><a href="#our-project">Our Project</a></li>
           <!-- <li><a href="#team">Pengurus</a></li> -->
           <li><a href="#contact">Kontak</a></li>
           <li class="dropdown"><a href="#"><span>Service</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -313,6 +314,73 @@
       </div>
 
     </section><!-- /Gallery Section -->
+
+    <!-- Our Project Section -->
+    <section id="our-project" class="section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Project</h2>
+        <div><span>Our</span> <span class="description-title">Project</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        @if(isset($ourProjects) && $ourProjects->count() > 0)
+        <div class="row g-4">
+          @foreach($ourProjects as $project)
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ 100 + ($loop->index * 100) }}">
+            <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden" style="transition: all 0.4s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 40px rgba(220, 53, 69, 0.15)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)';">
+              
+              {{-- Project Image --}}
+              <div style="position: relative; overflow: hidden; height: 220px; background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
+                @if($project->foto)
+                <img src="{{ asset('storage/' . $project->foto) }}" alt="{{ $project->nama }}" 
+                  style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" 
+                  onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                @else
+                <div class="d-flex align-items-center justify-content-center h-100" style="color: #ccc;">
+                  <i class="bi bi-folder2-open" style="font-size: 3.5rem;"></i>
+                </div>
+                @endif
+
+                {{-- Overlay Badge --}}
+                <div style="position: absolute; top: 15px; left: 15px;">
+                  <span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, #dc3545, #fd7e14); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.5px;">
+                    <i class="bi bi-star-fill me-1"></i>PROJECT
+                  </span>
+                </div>
+              </div>
+
+              {{-- Project Body --}}
+              <div class="card-body p-4">
+                <h5 class="fw-bold mb-2" style="font-size: 1.15rem; color: #2c3e50;">{{ $project->nama }}</h5>
+                <p class="text-muted mb-3" style="font-size: 0.88rem; line-height: 1.7; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                  {{ $project->deskripsi }}
+                </p>
+                @if($project->link)
+                <a href="{{ $project->link }}" target="_blank" class="btn btn-sm rounded-pill px-4 py-2 fw-semibold" 
+                  style="background: linear-gradient(135deg, #dc3545, #fd7e14); color: white; border: none; font-size: 0.8rem; transition: all 0.3s ease;" 
+                  onmouseover="this.style.opacity='0.85'; this.style.transform='translateY(-2px)';" 
+                  onmouseout="this.style.opacity='1'; this.style.transform='none';">
+                  <i class="bi bi-box-arrow-up-right me-1"></i> Lihat Project
+                </a>
+                @endif
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+        @else
+        <div class="text-center text-muted py-5">
+          <i class="bi bi-folder2-open" style="font-size: 3rem; color: #ddd;"></i>
+          <p class="mt-3">Belum ada project yang ditambahkan.</p>
+        </div>
+        @endif
+
+      </div>
+
+    </section><!-- /Our Project Section -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section dark-background">
