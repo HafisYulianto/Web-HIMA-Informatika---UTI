@@ -46,10 +46,10 @@
           <li><a href="#about">Tentang</a></li>
           <li><a href="#activities">Kegiatan</a></li>
           <li><a href="#divisi">Divisi</a></li>
-          <li><a href="#our-project">Our Project</a></li>
+          <li><a href="#our-project">Proyek Kami</a></li>
           <!-- <li><a href="#team">Pengurus</a></li> -->
           <li><a href="#contact">Kontak</a></li>
-          <li class="dropdown"><a href="#"><span>Service</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="serasi">Serasi</a></li>
               <li><a href="https://app.himaif.web.id/" target="_blank">Penilaian Keaktifan Anggota</a></li>
@@ -320,8 +320,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Project</h2>
-        <div><span>Our</span> <span class="description-title">Project</span></div>
+        <h2>Proyek</h2>
+        <div><span>Proyek</span> <span class="description-title">Kami</span></div>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -347,7 +347,7 @@
                 {{-- Overlay Badge --}}
                 <div style="position: absolute; top: 15px; left: 15px;">
                   <span class="badge rounded-pill px-3 py-2" style="background: linear-gradient(135deg, #dc3545, #fd7e14); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.5px;">
-                    <i class="bi bi-star-fill me-1"></i>PROJECT
+                    <i class="bi bi-star-fill me-1"></i>PROYEK
                   </span>
                 </div>
               </div>
@@ -553,12 +553,13 @@
             <li><i class="bi bi-chevron-right"></i> <a href="#about">Tentang</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="#activities">Kegiatan</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="#divisi">Divisi</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#our-project">Proyek Kami</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="#contact">Kontak</a></li>
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-3 footer-links">
-          <h4>Service</h4>
+          <h4>Layanan</h4>
           <ul>
             <li><i class="bi bi-chevron-right"></i> <a href="serasi">Serasi</a></li>
             <li><i class="bi bi-chevron-right"></i> <a href="https://app.himaif.web.id/" target="_blank">Penilaian Keaktifan</a></li>
