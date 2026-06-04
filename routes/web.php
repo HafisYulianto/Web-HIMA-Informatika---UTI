@@ -8,9 +8,11 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DivisiController;
 use App\Http\Controllers\Admin\KabinetController;
 use App\Http\Controllers\Admin\ProgramController;
+use App\Http\Controllers\Admin\OurProjectController;
 use App\Models\Divisi;
 use App\Models\Kabinet;
 use App\Models\Program;
+use App\Models\OurProject;
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth'])
@@ -32,13 +34,15 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::resource('divisi', DivisiController::class);
     Route::resource('kabinet', KabinetController::class);
     Route::resource('program', ProgramController::class);
+    Route::resource('our-project', OurProjectController::class);
 });
 
 Route::get('/', function () {
     $divisis = Divisi::all();
     $kabinet = Kabinet::latest()->first();
     $programs = Program::all();
-    return view('welcome', compact('divisis', 'kabinet', 'programs'));
+    $ourProjects = OurProject::latest()->get();
+    return view('welcome', compact('divisis', 'kabinet', 'programs', 'ourProjects'));
 });
 
 Route::get('/dashboard', function () {
