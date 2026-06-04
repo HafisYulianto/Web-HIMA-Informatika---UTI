@@ -8,8 +8,8 @@
         <a href="{{ route('admin.our-project.index') }}" class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors mb-4">
             <i class="bi bi-arrow-left"></i> Kembali
         </a>
-        <h1 class="text-2xl font-bold text-white">Edit Project</h1>
-        <p class="text-sm text-slate-400 mt-1">Perbarui data project "{{ $project->nama }}"</p>
+        <h1 class="text-2xl font-bold text-white">Edit Proyek</h1>
+        <p class="text-sm text-slate-400 mt-1">Perbarui data proyek "{{ $project->nama }}"</p>
     </div>
 
     {{-- Validation Errors --}}
@@ -34,10 +34,10 @@
 
             {{-- Nama Project --}}
             <div>
-                <label for="nama" class="block text-sm font-medium text-slate-300 mb-2">Nama Project</label>
+                <label for="nama" class="block text-sm font-medium text-slate-300 mb-2">Nama Proyek</label>
                 <input type="text" name="nama" id="nama" value="{{ old('nama', $project->nama) }}" required
                     class="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50 focus:border-red-500 transition-all @error('nama') border-red-500 focus:ring-red-500/20 @enderror"
-                    placeholder="Masukkan nama project...">
+                    placeholder="Masukkan nama proyek...">
                 @error('nama')
                 <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
                 @enderror
@@ -45,10 +45,10 @@
 
             {{-- Deskripsi --}}
             <div>
-                <label for="deskripsi" class="block text-sm font-medium text-slate-300 mb-2">Deskripsi Project</label>
+                <label for="deskripsi" class="block text-sm font-medium text-slate-300 mb-2">Deskripsi Proyek</label>
                 <textarea name="deskripsi" id="deskripsi" rows="4" required
                     class="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50 focus:border-red-500 transition-all resize-y @error('deskripsi') border-red-500 focus:ring-red-500/20 @enderror"
-                    placeholder="Jelaskan deskripsi project...">{{ old('deskripsi', $project->deskripsi) }}</textarea>
+                    placeholder="Jelaskan deskripsi proyek...">{{ old('deskripsi', $project->deskripsi) }}</textarea>
                 @error('deskripsi')
                 <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
                 @enderror
@@ -56,7 +56,7 @@
 
             {{-- Link Project --}}
             <div>
-                <label for="link" class="block text-sm font-medium text-slate-300 mb-2">Link Project (Opsional)</label>
+                <label for="link" class="block text-sm font-medium text-slate-300 mb-2">Link Proyek (Opsional)</label>
                 <div class="relative">
                     <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">
                         <i class="bi bi-link-45deg"></i>
@@ -65,7 +65,7 @@
                         class="w-full bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50 focus:border-red-500 transition-all @error('link') border-red-500 focus:ring-red-500/20 @enderror"
                         placeholder="https://example.com">
                 </div>
-                <p class="mt-2 text-xs text-slate-500">Masukkan URL lengkap project (termasuk https://)</p>
+                <p class="mt-2 text-xs text-slate-500">Masukkan URL lengkap proyek (termasuk https://)</p>
                 @error('link')
                 <p class="mt-2 text-sm text-red-400">{{ $message }}</p>
                 @enderror
@@ -73,7 +73,7 @@
 
             {{-- Foto Project --}}
             <div>
-                <label class="block text-sm font-medium text-slate-300 mb-2">Foto Project Saat Ini</label>
+                <label class="block text-sm font-medium text-slate-300 mb-2">Foto Proyek Saat Ini</label>
                 @if($project->foto)
                     <div class="mb-4">
                         <img src="{{ asset('storage/' . $project->foto) }}" alt="{{ $project->nama }}" 
