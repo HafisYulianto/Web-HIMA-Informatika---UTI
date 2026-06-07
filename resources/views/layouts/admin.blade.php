@@ -59,25 +59,26 @@
                         let confirmText = 'Ya, Hapus';
                         let icon = 'warning';
                         
-                        if (message.toLowerCase().includes('user')) {
+                        const path = window.location.pathname.toLowerCase();
+                        if (message.toLowerCase().includes('user') || path.includes('/users')) {
                             title = 'Hapus Pengguna?';
                             text = 'Apakah Anda yakin ingin menghapus akun pengguna ini?';
-                        } else if (message.toLowerCase().includes('proyek')) {
+                        } else if (message.toLowerCase().includes('proyek') || path.includes('/our-project')) {
                             title = 'Hapus Proyek?';
                             text = 'Apakah Anda yakin ingin menghapus data proyek ini?';
-                        } else if (message.toLowerCase().includes('divisi')) {
+                        } else if (message.toLowerCase().includes('divisi') || path.includes('/divisi')) {
                             title = 'Hapus Divisi?';
                             text = 'Apakah Anda yakin ingin menghapus data divisi ini?';
-                        } else if (message.toLowerCase().includes('kabinet')) {
+                        } else if (message.toLowerCase().includes('kabinet') || path.includes('/kabinet')) {
                             title = 'Hapus Kabinet?';
                             text = 'Apakah Anda yakin ingin menghapus data kabinet ini?';
-                        } else if (message.toLowerCase().includes('program')) {
+                        } else if (message.toLowerCase().includes('program') || path.includes('/program')) {
                             title = 'Hapus Program Kerja?';
                             text = 'Apakah Anda yakin ingin menghapus data program kerja ini?';
-                        } else if (message.toLowerCase().includes('komentar')) {
+                        } else if (message.toLowerCase().includes('komentar') || path.includes('/comment')) {
                             title = 'Hapus Komentar?';
                             text = 'Apakah Anda yakin ingin menghapus komentar/testimoni ini?';
-                        } else if (message.toLowerCase().includes('data') || message.toLowerCase().includes('aspirasi')) {
+                        } else if (message.toLowerCase().includes('aspirasi') || message.toLowerCase().includes('data') || path.includes('/serasi')) {
                             title = 'Hapus Data Aspirasi?';
                             text = 'Apakah Anda yakin ingin menghapus data laporan aspirasi ini?';
                         }
