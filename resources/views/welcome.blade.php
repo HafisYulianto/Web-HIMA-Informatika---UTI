@@ -408,7 +408,7 @@
           <div class="swiper-wrapper">
 
             {{-- Dynamic Comments from Database --}}
-            @if(isset($comments))
+            @if(isset($comments) && $comments->count() > 0)
               @foreach($comments as $comment)
               <div class="swiper-slide">
                 <div class="testimonial-item">
@@ -432,56 +432,14 @@
                 </div>
               </div><!-- End testimonial item -->
               @endforeach
+            @else
+              <div class="swiper-slide">
+                <div class="testimonial-item text-center py-4">
+                  <i class="bi bi-chat-left-quote text-white-50 block mb-2" style="font-size: 2.5rem;"></i>
+                  <p class="text-white-50 mt-2">Belum ada testimoni atau komentar dari pengguna.</p>
+                </div>
+              </div>
             @endif
-
-            {{-- Fallback / Default static testimonials --}}
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="/build/assets/img/profile.png" class="testimonial-img" alt="">
-                <h3>Budi Santoso</h3>
-                <h4>Ade Chandra 2022</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>HIMA Informatika telah memberikan saya pengalaman berharga dalam kepemimpinan dan manajemen organisasi. Skill yang saya dapatkan sangat berguna untuk karir saya sekarang.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="/build/assets/img/profile.png" class="testimonial-img" alt="">
-                <h3>Dela Se</h3>
-                <h4>Anggota Aktif</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Melalui berbagai workshop dan pelatihan yang diadakan HIMA, saya bisa mengembangkan skill programming yang langsung applicable di dunia kerja. Senang sekali bisa menjadi bagian dari komunitas ini.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="/build/assets/img/profile.png" class="testimonial-img" alt="">
-                <h3>Risma IF 22 Dx</h3>
-                <h4>Koordinator Acara</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Mengorganisir Tech Week 2023 adalah pengalaman yang menantang namun sangat memuaskan. Saya belajar banyak tentang event management dan jaringan profesional di industri teknologi.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
 
           </div>
           <div class="swiper-pagination"></div>
