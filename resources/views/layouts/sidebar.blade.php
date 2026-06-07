@@ -7,7 +7,7 @@
             </div>
             <div>
                 <h1 class="text-lg font-bold text-white leading-tight">HIMA IF</h1>
-                <p class="text-xs text-slate-400 -mt-0.5">Serasi Admin Panel</p>
+                <p class="text-xs text-slate-400 -mt-0.5">Admin Panel</p>
             </div>
         </div>
     </div>
