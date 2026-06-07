@@ -79,6 +79,15 @@
             Manajemen Proyek
         </a>
 
+        <a href="{{ route('admin.comment.index') }}"
+            class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 mt-1
+            {{ request()->routeIs('admin.comment.*') 
+                ? 'bg-gradient-to-r from-red-600/20 to-orange-500/10 text-red-400 border border-red-500/20 shadow-sm' 
+                : 'text-slate-400 hover:text-white hover:bg-slate-800' }}">
+            <i class="bi bi-chat-left-text-fill text-base"></i>
+            Manajemen Komentar
+        </a>
+
         <div class="my-6 border-t border-slate-800"></div>
         <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3 px-3">Akun</p>
 
