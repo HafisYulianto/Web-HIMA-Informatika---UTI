@@ -9,10 +9,13 @@ use App\Http\Controllers\Admin\DivisiController;
 use App\Http\Controllers\Admin\KabinetController;
 use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\OurProjectController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 use App\Models\Divisi;
 use App\Models\Kabinet;
 use App\Models\Program;
 use App\Models\OurProject;
+use App\Models\Comment;
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth'])
@@ -21,6 +24,7 @@ Route::get('/admin/dashboard', [DashboardController::class, 'index'])
 // Halaman depan
 Route::get('/serasi', [SerasiController::class, 'index']);
 Route::post('/serasi', [SerasiController::class, 'store'])->name('serasi.store');
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
 // Admin (gunakan middleware auth jika perlu)
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
@@ -35,6 +39,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::resource('kabinet', KabinetController::class);
     Route::resource('program', ProgramController::class);
     Route::resource('our-project', OurProjectController::class);
+    Route::resource('comment', AdminCommentController::class)->only(['index', 'destroy']);
 });
 
 Route::get('/', function () {
@@ -42,7 +47,8 @@ Route::get('/', function () {
     $kabinet = Kabinet::latest()->first();
     $programs = Program::all();
     $ourProjects = OurProject::latest()->get();
-    return view('welcome', compact('divisis', 'kabinet', 'programs', 'ourProjects'));
+    $comments = Comment::latest()->get();
+    return view('welcome', compact('divisis', 'kabinet', 'programs', 'ourProjects', 'comments'));
 });
 
 Route::get('/dashboard', function () {
