@@ -407,6 +407,34 @@
           </script>
           <div class="swiper-wrapper">
 
+            {{-- Dynamic Comments from Database --}}
+            @if(isset($comments))
+              @foreach($comments as $comment)
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img src="/build/assets/img/profile.png" class="testimonial-img" alt="">
+                  <h3>{{ $comment->nama }}</h3>
+                  <h4>{{ $comment->posisi }}</h4>
+                  <div class="stars">
+                    @for($i = 1; $i <= 5; $i++)
+                      @if($i <= $comment->bintang)
+                        <i class="bi bi-star-fill"></i>
+                      @else
+                        <i class="bi bi-star"></i>
+                      @endif
+                    @endfor
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>{{ $comment->komentar }}</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div><!-- End testimonial item -->
+              @endforeach
+            @endif
+
+            {{-- Fallback / Default static testimonials --}}
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="/build/assets/img/profile.png" class="testimonial-img" alt="">
@@ -458,6 +486,91 @@
           </div>
           <div class="swiper-pagination"></div>
         </div>
+
+        <!-- Form Kirim Komentar -->
+        <div class="row justify-content-center mt-5" id="kirim-testimoni">
+          <div class="col-lg-8">
+            <div class="p-4 p-md-5 rounded-4 shadow" style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);">
+              <h3 class="text-center text-white fw-bold mb-4" style="font-size: 1.5rem;">Kirim Testimoni / Komentar</h3>
+              
+              @if(session('success'))
+              <div class="alert alert-success alert-dismissible fade show border-0 rounded-3 mb-4" role="alert" style="background: rgba(40, 167, 69, 0.2); color: #2ecc71;">
+                <i class="bi bi-check-circle-fill me-2"></i> {{ session('success') }}
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              @endif
+
+              <form action="{{ route('comments.store') }}" method="POST">
+                @csrf
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="nama" class="form-label text-white-50 small fw-semibold">Nama Lengkap</label>
+                    <input type="text" name="nama" id="nama" class="form-control bg-transparent text-white border-secondary rounded-3 py-2.5" placeholder="" required style="box-shadow: none; border-color: rgba(255,255,255,0.2) !important;">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="posisi" class="form-label text-white-50 small fw-semibold">Jabatan/Angkatan</label>
+                    <input type="text" name="posisi" id="posisi" class="form-control bg-transparent text-white border-secondary rounded-3 py-2.5" placeholder="" required style="box-shadow: none; border-color: rgba(255,255,255,0.2) !important;">
+                  </div>
+                  <div class="col-12">
+                    <label for="rating" class="form-label text-white-50 small fw-semibold d-block">Rating Bintang</label>
+                    <div class="rating-stars d-flex gap-2 mb-3">
+                      <input type="hidden" name="bintang" id="rating-input" value="5">
+                      @for($i = 1; $i <= 5; $i++)
+                        <i class="bi bi-star-fill text-warning fs-4 rating-star" data-value="{{ $i }}" style="cursor: pointer; transition: transform 0.2s ease;"></i>
+                      @endfor
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <label for="komentar" class="form-label text-white-50 small fw-semibold">Komentar / Testimoni</label>
+                    <textarea name="komentar" id="komentar" rows="4" class="form-control bg-transparent text-white border-secondary rounded-3 py-2.5" placeholder="Tulis komentar atau testimoni Anda mengenai HIMA Informatika..." required style="box-shadow: none; border-color: rgba(255,255,255,0.2) !important; resize: none;"></textarea>
+                  </div>
+                  <div class="col-12 text-center mt-4">
+                    <button type="submit" class="btn rounded-pill px-5 py-2.5 fw-semibold text-white" style="background: linear-gradient(135deg, #dc3545, #fd7e14); border: none; transition: all 0.3s ease;">
+                      <i class="bi bi-send-fill me-2"></i> Kirim Testimoni
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.rating-star');
+            const input = document.getElementById('rating-input');
+
+            stars.forEach(star => {
+              star.addEventListener('click', function() {
+                const val = parseInt(this.getAttribute('data-value'));
+                input.value = val;
+                
+                // Update stars class
+                stars.forEach(s => {
+                  const sVal = parseInt(s.getAttribute('data-value'));
+                  if (sVal <= val) {
+                    s.classList.remove('bi-star');
+                    s.classList.add('bi-star-fill');
+                    s.classList.add('text-warning');
+                  } else {
+                    s.classList.remove('bi-star-fill');
+                    s.classList.remove('text-warning');
+                    s.classList.add('bi-star');
+                    s.classList.add('text-secondary');
+                  }
+                });
+              });
+              
+              // Add hover effect
+              star.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.25)';
+              });
+              star.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+              });
+            });
+          });
+        </script>
 
       </div>
 
