@@ -33,6 +33,85 @@
         </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Deteksi semua tombol atau tautan yang menggunakan confirm() bawaan browser
+            const deleteButtons = document.querySelectorAll('button[onclick*="confirm"], a[onclick*="confirm"]');
+            
+            deleteButtons.forEach(button => {
+                const onclickStr = button.getAttribute('onclick') || '';
+                const match = onclickStr.match(/confirm\(['"](.*?)['"]\)/);
+                if (match) {
+                    const message = match[1];
+                    
+                    // Hapus onclick bawaan agar tidak memicu pop-up default browser
+                    button.removeAttribute('onclick');
+                    
+                    // Tambahkan event listener custom menggunakan SweetAlert2
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const form = this.closest('form');
+                        
+                        // Menentukan judul dan isi teks pop-up berdasarkan kata kunci pesan
+                        let title = 'Hapus Data?';
+                        let text = message;
+                        let confirmText = 'Ya, Hapus';
+                        let icon = 'warning';
+                        
+                        if (message.toLowerCase().includes('user')) {
+                            title = 'Hapus Pengguna?';
+                            text = 'Apakah Anda yakin ingin menghapus akun pengguna ini?';
+                        } else if (message.toLowerCase().includes('proyek')) {
+                            title = 'Hapus Proyek?';
+                            text = 'Apakah Anda yakin ingin menghapus data proyek ini?';
+                        } else if (message.toLowerCase().includes('divisi')) {
+                            title = 'Hapus Divisi?';
+                            text = 'Apakah Anda yakin ingin menghapus data divisi ini?';
+                        } else if (message.toLowerCase().includes('kabinet')) {
+                            title = 'Hapus Kabinet?';
+                            text = 'Apakah Anda yakin ingin menghapus data kabinet ini?';
+                        } else if (message.toLowerCase().includes('program')) {
+                            title = 'Hapus Program Kerja?';
+                            text = 'Apakah Anda yakin ingin menghapus data program kerja ini?';
+                        } else if (message.toLowerCase().includes('komentar')) {
+                            title = 'Hapus Komentar?';
+                            text = 'Apakah Anda yakin ingin menghapus komentar/testimoni ini?';
+                        } else if (message.toLowerCase().includes('data') || message.toLowerCase().includes('aspirasi')) {
+                            title = 'Hapus Data Aspirasi?';
+                            text = 'Apakah Anda yakin ingin menghapus data laporan aspirasi ini?';
+                        }
+                        
+                        Swal.fire({
+                            title: title,
+                            text: text,
+                            icon: icon,
+                            showCancelButton: true,
+                            confirmButtonColor: '#ef4444', // red-500
+                            cancelButtonColor: '#475569', // slate-600
+                            confirmButtonText: confirmText,
+                            cancelButtonText: 'Batal',
+                            background: '#0f172a', // slate-900
+                            color: '#f1f5f9', // slate-100
+                            iconColor: '#f59e0b', // amber-500
+                            customClass: {
+                                popup: 'rounded-2xl border border-slate-800 shadow-xl'
+                            }
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                if (form) {
+                                    form.submit();
+                                } else {
+                                    const href = button.getAttribute('href');
+                                    if (href) window.location.href = href;
+                                }
+                            }
+                        });
+                    });
+                }
+            });
+        });
+    </script>
     @yield('scripts')
 </body>
 </html>
