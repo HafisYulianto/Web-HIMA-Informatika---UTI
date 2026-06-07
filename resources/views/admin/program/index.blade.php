@@ -57,7 +57,7 @@
                                 </a>
                                 <form method="POST" action="{{ route('admin.program.destroy', $item->id) }}" class="inline">
                                     @csrf @method('DELETE')
-                                    <button onclick="return confirm('Yakin ingin menghapus data ini?')" 
+                                    <button onclick="return confirm('Yakin ingin menghapus program kerja ini?')" 
                                         class="p-2 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-all" title="Hapus">
                                         <i class="bi bi-trash3"></i>
                                     </button>
